@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Lionic</title>
+</head>
+<body>
+    <header class="header">
+<div class="container flex header-container">
+    <a href="index.html" class="header-logo">
+        <img src="img/free-icon-artistic-gymnastics-15179911.png" class="header-logo"   alt="logo">
+
+    </a>
+    <nav class="header-nav">
+        <ul class="list-reset header-list list-reset flex">
+            <li class="header-list-item"><a href="index.html" class="header-link">Главная</a></li>
+            
+
+            <li class="header-list-item"><a href="#articles" class="header-link">Новости</a></li>
+            <li class="header-list-item"><a href="trener.html" class="header-link">Тренерам</a></li>
+            <li class="header-list-item"><a href="ychenik.html" class="header-link">Ученикам</a></li>
+        </ul>
+    </nav>
+    <a href="avtor.html"> <button class="btn-reset header-btn btn" >Войти как администратор</button></a>
+</div>
+
+    </header>
+    <main class="main">
+
+
+        <div class="avtorition">
+            <div class="avt">
+            <p class="zagolovok1-avtor">Войти как администратор</p>
+            <div class="avtorizacia">
+                
+                <form action="profil.html"  id="loginForm">
+                    <div class="log_parol">
+                        <p class="login_text">Электронная почта:</p>
+                        <input type="email" name="jaj" id="emaill" class="inp1-log" required>
+                    
+                    
+                        <p class="parol_text">Пароль:</p>
+                        <input type="password"  id="password" name="ppl"  class="inp2-par" required>
+                    
+                    </div>
+            
+                </div>
+              
+                   <a href="profil.html"><button class="buttonavt"  id="voyti" type="submit"> Продолжить</button></a> 
+
+               
+            </form>
+           
+        </div>
+        </div>
+        <script>
+            function validate_form(){
+                if (document.getElementById('emaill').value==""||
+                document.getElementById('password').value=="")
+                
+                {
+                alert("Пожалуйста, заполните все поля");
+                return;
+            }
+            }
+    
+        const CORRECT_MAIL_ADMIN = 'admin@mail';
+        const CORRECT_PASSWORD_ADMIN = '1234';
+    
+        
+    
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const emaill = document.getElementById("emaill").value;
+            const password = document.getElementById("password").value;
+    
+    
+            if (emaill === "" || password === "") {
+                alert("Пожалуйста, заполните все поля");
+                return;
+            }
+    
+      
+            if (emaill === CORRECT_MAIL_ADMIN && password === CORRECT_PASSWORD_ADMIN) {
+                alert('Успешный вход как администратор!');
+                window.location.href = 'admin.html';
+            }  else {
+                alert('Неверный email или пароль');
+              
+            }
+        });
+    </script>
+    
+   
+        </main>
+    
+       
+            </body>
+            </html>
+    
